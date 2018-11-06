@@ -56,7 +56,7 @@
                     <div class="col-md-3 col-lg-3 col-sm-3">
                         <div class="logo">
                             <a href="http://riantengineersltd.com">
-                                <img src="{{ asset('fontEnd/images/logo2.png') }}" class="responsive" alt="riant engineers ltd logo">
+                            <img src="{{ asset('storage') }}/{{$logo->image}}" class="responsive" alt="riant engineers ltd logo">
                             </a>
                         </div>
                     </div>

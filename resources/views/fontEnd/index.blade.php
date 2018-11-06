@@ -205,25 +205,13 @@
                         </div>
 
                         <div class="client-slider owl-carousel">
-
+                            @foreach ( $ourClients as $ourClient)                               
                             <div class="client-slider-item">
-                                <img src="{{ asset('fontEnd/images/clients(1).jpg') }}" alt="">
-                            </div><!-- client-slider-item end -->
-
-                            <div class="client-slider-item">
-                                <img src="{{ asset('fontEnd/images/clients(2).jpg') }}" alt="">
-                            </div><!-- client-slider-item end -->
-
-                            <div class="client-slider-item">
-                                <img src="{{ asset('fontEnd/images/partex-logo.png') }}" alt="">
-                            </div><!-- client-slider-item end -->
-
-                            <div class="client-slider-item">
-                                <img src="{{ asset('fontEnd/images/clients(4).jpg') }}" alt="">
-                            </div><!-- client-slider-item end -->
-
+                                <img src="{{ asset('storage') }}/{{ $ourClient->image }}" alt="">
+                            </div><!-- client-slider-item end -->                           
+                            @endforeach                           
                         </div><!-- client-slider end -->
-                    </div>
+                    </div><!-- client end -->
 
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
@@ -234,22 +222,11 @@
                         </div>
 
                         <div class="partner-slider owl-carousel">
-
+                            @foreach ($ourPartners as $ourPartner)
                             <div class="client-slider-item">
-                                <img src="{{ asset('fontEnd/images/clients(1).jpg') }}" alt="">
+                            <img src="{{ asset('storage') }}/{{ $ourPartner->image }}" alt="">
                             </div><!-- client-slider-item end -->
-
-                            <div class="client-slider-item">
-                                <img src="{{ asset('fontEnd/images/clients(2).jpg') }}" alt="">
-                            </div><!-- client-slider-item end -->
-
-                            <div class="client-slider-item">
-                                <img src="{{ asset('fontEnd/images/partex-logo.png') }}" alt="">
-                            </div><!-- client-slider-item end -->
-
-                            <div class="client-slider-item">
-                                <img src="{{ asset('fontEnd/images/clients(4).jpg') }}" alt="">
-                            </div><!-- client-slider-item end -->
+                            @endforeach
 
                         </div><!-- client-slider end -->
                     </div>
@@ -273,12 +250,13 @@
             <!--title row end-->
             <div class="row demo-gallery">
                 <div id="lightgallery" class="gallary-img  work-inner">
+                   @foreach ($gallerys as $gallery)
 
-                    <div class="col-lg-3 col-md-3 col-sm-6" data-src="{{ asset('fontEnd/images/1.png') }}" data-sub-html="<h4>Your Title</h4>">
+                    <div class="col-lg-3 col-md-3 col-sm-6" data-src="{{asset('storage')}}/{{$gallery->image}}" data-sub-html="<h4>Your Title</h4>">
                         <div class="item-img">
-                            <img src="{{ asset('fontEnd/images/1.png') }}">
+                            <img src="{{asset('storage')}}/{{$gallery->image}}" alt="">
                             <div class="item-img-overlay">
-                                <h5 class="sm-titl allcaps">Your title</h5>
+                                <h5 class="sm-titl allcaps">{{$gallery->title}}</h5>
                                 <div class="icons">
                                     <span class="icon">
                                         <a href="">
@@ -289,119 +267,7 @@
                             </div>
                         </div>
                     </div>
-                    <!--gallary item end-->
-                    <div class="col-lg-3 col-md-3 col-sm-6" data-src="{{ asset('fontEnd/images/9.jpg') }}" data-sub-html="<h4>Your Title</h4>">
-                        <div class="item-img">
-                            <img src="{{ asset('fontEnd/images/9.jpg') }}">
-                            <div class="item-img-overlay">
-                                <h5 class="sm-titl allcaps">Your title</h5>
-                                <div class="icons">
-                                    <span class="icon">
-                                        <a href="">
-                                            <i class="fa fa-image" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--gallary item end-->
-                    <div class="col-lg-3 col-md-3 col-sm-6" data-src="{{ asset('fontEnd/images/10.jpg') }}" data-sub-html="<h4>Your Title</h4>">
-                        <div class="item-img">
-                            <img src="{{ asset('fontEnd/images/10.jpg') }}">
-                            <div class="item-img-overlay">
-                                <h5 class="sm-titl allcaps">Your title</h5>
-                                <div class="icons">
-                                    <span class="icon">
-                                        <a href="">
-                                            <i class="fa fa-image" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--gallary item end-->
-                    <div class="col-lg-3 col-md-3 col-sm-6" data-src="{{ asset('fontEnd/images/11.jpg') }}" data-sub-html="<h4>Your Title</h4>">
-                        <div class="item-img">
-                            <img src="{{ asset('fontEnd/images/11.jpg') }}">
-                            <div class="item-img-overlay">
-                                <h5 class="sm-titl allcaps">Your title</h5>
-                                <div class="icons">
-                                    <span class="icon">
-                                        <a href="">
-                                            <i class="fa fa-image" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--gallary item end-->
-                    <div class="col-lg-3 col-md-3 col-sm-6" data-src="{{ asset('fontEnd/images/12.jpg') }}" data-sub-html="<h4>Your Title</h4>">
-                        <div class="item-img">
-                            <img src="{{ asset('fontEnd/images/12.jpg') }}">
-                            <div class="item-img-overlay">
-                                <h5 class="sm-titl allcaps">Your title</h5>
-                                <div class="icons">
-                                    <span class="icon">
-                                        <a href="">
-                                            <i class="fa fa-image" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--gallary item end-->
-                    <div class="col-lg-3 col-md-3 col-sm-6" data-src="{{ asset('fontEnd/images/13.jpg') }}" data-sub-html="<h4>Your Title</h4>">
-                        <div class="item-img">
-                            <img src="{{ asset('fontEnd/images/13.jpg') }}">
-                            <div class="item-img-overlay">
-                                <h5 class="sm-titl allcaps">Your title</h5>
-                                <div class="icons">
-                                    <span class="icon">
-                                        <a href="">
-                                            <i class="fa fa-image" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--gallary item end-->
-                    <div class="col-lg-3 col-md-3 col-sm-6" data-src="{{ asset('fontEnd/images/14.jpg') }}" data-sub-html="<h4>Your Title</h4>">
-                        <div class="item-img">
-                            <img src="{{ asset('fontEnd/images/14.jpg') }}">
-                            <div class="item-img-overlay">
-                                <h5 class="sm-titl allcaps">Your title</h5>
-                                <div class="icons">
-                                    <span class="icon">
-                                        <a href="">
-                                            <i class="fa fa-image" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--gallary item end-->
-                    <div class="col-lg-3 col-md-3 col-sm-6" data-src="{{ asset('fontEnd/images/15.jpg') }}" data-sub-html="<h4>Your Title</h4>">
-                        <div class="item-img">
-                            <img src="{{ asset('fontEnd/images/15.jpg') }}">
-                            <div class="item-img-overlay">
-                                <h5 class="sm-titl allcaps">Your title</h5>
-                                <div class="icons">
-                                    <span class="icon">
-                                        <a href="">
-                                            <i class="fa fa-image" aria-hidden="true"></i>
-                                        </a>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--gallary item end-->
+                    @endforeach
                 </div>
             </div>
             <!--row end-->

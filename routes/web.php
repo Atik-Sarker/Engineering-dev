@@ -34,7 +34,14 @@ Route::get('/logo/delete/{id}', 'LogoController@destroy')->name('logo.destroy');
 
 // Logo Route ends
 
-
+// Gallery Route start
+Route::get('/gallery/manage', 'GalleryController@index')->name('gallery.manage');
+Route::get('/gallery/create', 'GalleryController@create')->name('gallery.create');
+Route::post('/gallery/create', 'GalleryController@store')->name('gallery.store');
+Route::get('/gallery/edit/{id}', 'GalleryController@edit')->name('gallery.edit');
+Route::post('/gallery/update/{id}', 'GalleryController@update')->name('gallery.update');
+Route::get('/gallery/delete/{id}', 'GalleryController@destroy')->name('gallery.destroy');
+// Gallery Route ends
 
 
 

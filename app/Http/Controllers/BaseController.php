@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\slider;
 use App\Logo;
+use App\Gallery;
 
 class BaseController extends Controller
 {
@@ -15,9 +16,27 @@ class BaseController extends Controller
      */
     public function index()
     {
-        $sliders = slider::all();
-        return $logos = Logo::all();
-        return view('fontEnd.index', compact('sliders'));
+        $sliders = slider::where('status', true)->orderBy('created_at','desc')->get();
+
+         $logo = Logo::where([
+            'type' => 1,
+            'status' => true,
+         ])->orderBy('created_at','desc')->first();
+
+
+         $ourClients = Logo::where([
+            'type' => 2,
+            'status' => true,
+         ])->orderBy('created_at','desc')->get();
+
+         $ourPartners = Logo::where([
+            'type' => 3,
+            'status' => true,
+         ])->orderBy('created_at','desc')->get();
+
+         $gallerys = Gallery::where(['status' => true,])->orderBy('created_at','desc')->get();
+
+        return view('fontEnd.index', compact('sliders','ourClients','ourPartners', 'logo', 'gallerys'));
     }
 
     /**
