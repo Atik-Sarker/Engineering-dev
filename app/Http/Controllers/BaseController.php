@@ -9,6 +9,7 @@ use App\Gallery;
 
 class BaseController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -34,74 +35,159 @@ class BaseController extends Controller
             'status' => true,
          ])->orderBy('created_at','desc')->get();
 
-         $gallerys = Gallery::where(['status' => true,])->orderBy('created_at','desc')->get();
+         $gallerys = Gallery::where('status', true)->orderBy('created_at','desc')->limit('8',0)->get();
 
         return view('fontEnd.index', compact('sliders','ourClients','ourPartners', 'logo', 'gallerys'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    
+    public function PowerEnergy()
     {
-        //
+        $logo = Logo::where([
+            'type' => 1,
+            'status' => true,
+         ])->orderBy('created_at','desc')->first();
+        return view('fontEnd.page.PowerEnergy', compact('logo'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+   
+    public function CivilConstruction()
     {
-        //
+        $logo = Logo::where([
+            'type' => 1,
+            'status' => true,
+         ])->orderBy('created_at','desc')->first();
+        return view('fontEnd.page.CivilConstruction', compact('logo'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+ 
+    public function Mechanical()
     {
-        //
+        $logo = Logo::where([
+            'type' => 1,
+            'status' => true,
+         ])->orderBy('created_at','desc')->first();
+        return view('fontEnd.page.Mechanical', compact('logo'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+   function Automation()
     {
-        //
+        $logo = Logo::where([
+            'type' => 1,
+            'status' => true,
+         ])->orderBy('created_at','desc')->first();
+        return view('fontEnd.page.automation', compact('logo'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+   
+    public function RealState()
     {
-        //
+        $logo = Logo::where([
+            'type' => 1,
+            'status' => true,
+         ])->orderBy('created_at','desc')->first();
+        return view('fontEnd.page.RealState', compact('logo'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    
+    public function HealthSafty()
     {
-        //
+        $logo = Logo::where([
+            'type' => 1,
+            'status' => true,
+         ])->orderBy('created_at','desc')->first();
+        return view('fontEnd.page.HealthSafty', compact('logo'));
     }
+
+
+    public function QualityManagement()
+    {
+        $logo = Logo::where([
+            'type' => 1,
+            'status' => true,
+         ])->orderBy('created_at','desc')->first();
+        return view('fontEnd.page.QualityManagement', compact('logo'));
+    }
+
+
+    public function Environment()
+    {
+        $logo = Logo::where([
+            'type' => 1,
+            'status' => true,
+         ])->orderBy('created_at','desc')->first();
+        return view('fontEnd.page.Environment', compact('logo'));
+    }
+    public function Gallery()
+    {
+        $logo = Logo::where([
+            'type' => 1,
+            'status' => true,
+         ])->orderBy('created_at','desc')->first();
+
+         $gallerys = Gallery::where('status', true)->orderBy('created_at','desc')->paginate(16);
+
+        return view('fontEnd.page.Gallery', compact('logo', 'gallerys'));
+    }
+    public function Contact()
+    {
+        $logo = Logo::where([
+            'type' => 1,
+            'status' => true,
+         ])->orderBy('created_at','desc')->first();
+
+        return view('fontEnd.page.Contact', compact('logo'));
+    }
+    public function overview()
+    {
+        $logo = Logo::where([
+            'type' => 1,
+            'status' => true,
+         ])->orderBy('created_at','desc')->first();
+
+        return view('fontEnd.page.overview', compact('logo'));
+    }
+
+    public function VisionMission()
+    {
+        $logo = Logo::where([
+            'type' => 1,
+            'status' => true,
+         ])->orderBy('created_at','desc')->first();
+
+        return view('fontEnd.page.VisionMission', compact('logo'));
+    }
+
+    public function Management()
+    {
+        $logo = Logo::where([
+            'type' => 1,
+            'status' => true,
+         ])->orderBy('created_at','desc')->first();
+
+        return view('fontEnd.page.Management', compact('logo'));
+    }
+
+    public function keyPerson()
+    {
+        $logo = Logo::where([
+            'type' => 1,
+            'status' => true,
+         ])->orderBy('created_at','desc')->first();
+
+        return view('fontEnd.page.keyPerson', compact('logo'));
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    
 }

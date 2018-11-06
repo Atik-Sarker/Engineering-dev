@@ -55,7 +55,7 @@
                 <div class="row">
                     <div class="col-md-3 col-lg-3 col-sm-3">
                         <div class="logo">
-                            <a href="http://riantengineersltd.com">
+                            <a href="{{ URL::to('/') }}">
                             <img src="{{ asset('storage') }}/{{$logo->image}}" class="responsive" alt="riant engineers ltd logo">
                             </a>
                         </div>
@@ -63,35 +63,35 @@
                     <div class="col-md-9 col-lg-9 col-sm-9">
                         <div class="main-menu">
                             <ul>
-                                <li class="active"><a href="http://riantengineersltd.com">Home</a></li>
+                                <li class="active"><a href="{{ URL::to('/') }}">Home</a></li>
                                 <li><a class="anchor">Our Business</a>
                                     <ul class="sub-menu-parent">
-                                        <li><a href="powerenergy.html">Power & Energy</a></li>
-                                        <li><a href="civil-engineering.html">Civil & Construction</a></li>
-                                        <li><a href="mechanical.html">Mechanical</a></li>
-                                        <li><a href="automation.html">Automation</a></li>
-                                        <li><a href="real-state.html">Real Estate</a></li>
+                                    <li><a href="{{ route('powerEnergy') }}">Power & Energy</a></li>
+                                        <li><a href="{{ route('civilConstruction') }}">Civil & Construction</a></li>
+                                    <li><a href="{{route('Mechanical')}}">Mechanical</a></li>
+                                        <li><a href="{{route('Automation')}}">Automation</a></li>
+                                        <li><a href="{{route('realEstate')}}">Real Estate</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="">sustainability</a>
+                                <li><a class="anchor">sustainability</a>
                                     <ul class="sub-menu-parent">
-                                        <li><a href="healthsafty.html">Health & Safty</a></li>
-                                        <li><a href="qualitymanagement.html">Total Quality Management</a></li>
-                                        <li><a href="environment.html">Environment</a></li>
+                                        <li><a href="{{route('HealthSafty')}}">Health & Safty</a></li>
+                                        <li><a href="{{route('QualityManagement')}}">Total Quality Management</a></li>
+                                        <li><a href="{{route('Environment')}}">Environment</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="gallery.html">Gallery</a></li>
-                                <li><a href="">About Us</a>
+                                <li><a href="{{route('Gallery')}}">Gallery</a></li>
+                                <li><a class="anchor">About Us</a>
 
                                     <ul class="sub-menu-parent">
-                                        <li><a href="overview.html">Overview</a></li>
-                                        <li><a href="mission-vission.html">Vision & Mission</a></li>
-                                        <li><a href="management.html">Management</a></li>
-                                        <li><a href="key-person.html">Key Person</a></li>
+                                        <li><a href="{{route('overview')}}">Overview</a></li>
+                                        <li><a href="{{route('VisionMission')}}">Vision & Mission</a></li>
+                                        <li><a href="{{route('Management')}}">Management</a></li>
+                                        <li><a href="{{route('keyPerson')}}">Key Person</a></li>
                                     </ul>
 
                                 </li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="{{route('Contact')}}">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -101,7 +101,6 @@
         </div><!-- End main-nav-area-->
         
         <section id="mobile-menu" class="hidden-lg hidden-md hidden-sm">
-            
             <div class="mobile-menu">
                <div class="mobile-logo">
                 <a href="">
@@ -109,32 +108,33 @@
                 </a>
             </div>
                 <ul>
-                    <li class="active"><a href="http://riantengineersltd.com">Home</a></li>
+                    <li class="active"><a href="{{ URL::to('/') }}">Home</a></li>
                     <li><a class="anchor">Our Business</a>
-                        <ul>
-                            <li><a href="powerenergy.html">Power & Energy</a></li>
-                            <li><a href="">Civil & Construction</a></li>
-                            <li><a href="">Mechanical</a></li>
-                            <li><a href="">Real Estate</a></li>
+                        <ul class="sub-menu-parent">
+                        <li><a href="{{ route('powerEnergy') }}">Power & Energy</a></li>
+                            <li><a href="{{ route('civilConstruction') }}">Civil & Construction</a></li>
+                        <li><a href="{{route('Mechanical')}}">Mechanical</a></li>
+                            <li><a href="{{route('Automation')}}">Automation</a></li>
+                            <li><a href="{{route('realEstate')}}">Real Estate</a></li>
                         </ul>
                     </li>
-                    <li><a href="">sustainability</a>
-                        <ul>
-                            <li><a href="r">Health & Safty</a></li>
-                            <li><a href="">Total Quality Management</a></li>
-                            <li><a href="environment.html">Environment</a></li>
+                    <li><a class="anchor">sustainability</a>
+                        <ul class="sub-menu-parent">
+                            <li><a href="{{route('HealthSafty')}}">Health & Safty</a></li>
+                            <li><a href="{{route('QualityManagement')}}">Total Quality Management</a></li>
+                            <li><a href="{{route('Environment')}}">Environment</a></li>
                         </ul>
                     </li>
-                    <li><a href="">Gallery</a></li>
-                    <li><a href="">About Us</a>
-                        <ul>
-                            <li><a href="r">Overview</a></li>
-                            <li><a href="">Vision & Mission</a></li>
-                            <li><a href="">Management</a></li>
-                            <li><a href="">Key Person</a></li>
+                    <li><a href="{{route('Gallery')}}">Gallery</a></li>
+                    <li><a class="anchor">About Us</a>
+                        <ul class="sub-menu-parent">
+                            <li><a href="{{route('overview')}}">Overview</a></li>
+                            <li><a href="{{route('VisionMission')}}">Vision & Mission</a></li>
+                            <li><a href="{{route('Management')}}">Management</a></li>
+                            <li><a href="{{route('keyPerson')}}">Key Person</a></li>
                         </ul>
                     </li>
-                    <li><a href="">Contact</a></li>
+                    <li><a href="{{route('Contact')}}">Contact</a></li>
                 </ul>
             </div>
             

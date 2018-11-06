@@ -1595,13 +1595,14 @@ item-img {
     width: 100%;
     position: absolute;
 }
-.enviroment-info ul li i{
-    font-size: 20px;
+.enviroment-info ul li i {
+    font-size: 26px;
     color: #ffc527;
+    width: 30px;
+    float: left;
 }
 .management-info {
 	padding: 30px;
-    height: 400px;
     color: #444;
 }
 .chairman {

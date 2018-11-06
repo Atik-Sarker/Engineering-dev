@@ -139,10 +139,9 @@
                                 <img src="{{ asset('fontEnd/images/1.png') }}" alt="">
                             </div>
                             <div class="service-info">
-                                <h3>Service 1</h3>
+                                <h3>Service One</h3>
                                 <p>There are many variations of passages of Lorem Ipsum text available, but the fact is lorem ipsum dummy text are many is dummy text ever i have seen!</p>
 
-                                <a href="">Read More <i class="fa fa-angle-right" aria-hidden="true"></i></a>
 
                             </div><!-- service-info end -->
                         </div>
@@ -152,10 +151,9 @@
                                 <img src="{{ asset('fontEnd/images/4.jpg') }}" alt="">
                             </div>
                             <div class="service-info">
-                                <h3>Service 2</h3>
+                                <h3>Service Two</h3>
                                 <p>There are many variations of passages of Lorem Ipsum text available, but the fact is lorem ipsum dummy text are many is dummy text ever i have seen!</p>
 
-                                <a href="">Read More <i class="fa fa-angle-right" aria-hidden="true"></i></a>
 
                             </div><!-- service-info end -->
                         </div>
@@ -165,10 +163,9 @@
                                 <img src="{{ asset('fontEnd/images/13.jpg') }}" alt="">
                             </div>
                             <div class="service-info">
-                                <h3>Service 3</h3>
+                                <h3>Service three</h3>
                                 <p>There are many variations of passages of Lorem Ipsum text available, but the fact is lorem ipsum dummy text are many is dummy text ever i have seen!</p>
 
-                                <a href="">Read More <i class="fa fa-angle-right" aria-hidden="true"></i></a>
 
                             </div><!-- service-info end -->
                         </div>
@@ -181,7 +178,6 @@
                                 <h3>Service 4</h3>
                                 <p>There are many variations of passages of Lorem Ipsum text available, but the fact is lorem ipsum dummy text are many is dummy text ever i have seen!</p>
 
-                                <a href="">Read More <i class="fa fa-angle-right" aria-hidden="true"></i></a>
 
                             </div><!-- service-info end -->
                         </div>
@@ -250,8 +246,8 @@
             <!--title row end-->
             <div class="row demo-gallery">
                 <div id="lightgallery" class="gallary-img  work-inner">
-                   @foreach ($gallerys as $gallery)
 
+                   @foreach ($gallerys as $gallery)
                     <div class="col-lg-3 col-md-3 col-sm-6" data-src="{{asset('storage')}}/{{$gallery->image}}" data-sub-html="<h4>Your Title</h4>">
                         <div class="item-img">
                             <img src="{{asset('storage')}}/{{$gallery->image}}" alt="">
