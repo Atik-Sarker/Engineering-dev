@@ -35,7 +35,7 @@
                             <input type="text" name="inquiry" placeholder="FOR INQUIRY">
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 wow zoomIn" data-wow-duration="1s" data-wow-delay="0s">
-                            <textarea name="message" placeholder="MESSAGE"></textarea>
+                            <textarea name="user_message" placeholder="MESSAGE"></textarea>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 text-center  wow zoomIn" data-wow-duration="2s" data-wow-delay="0s">
                             <button type="submit" class="about-company-btn"> Submit </button>
