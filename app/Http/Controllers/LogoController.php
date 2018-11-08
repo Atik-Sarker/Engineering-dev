@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class LogoController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -62,9 +72,13 @@ class LogoController extends Controller
      * @param  \App\Logo  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Logo $logo)
+    public function status(Request $request, $id)
     {
-        //
+        $logo = Logo::findOrFail($id);
+        $logo->status = $request->status;
+        $logo->save();
+        return redirect(route('logo.manage'))->with('status', 'Status Update Successfully!');
+
     }
 
     /**
@@ -96,7 +110,6 @@ class LogoController extends Controller
         ]);
         $logo = Logo::findOrFail($id);
 
-        // return $request->all();
         if($request->has('image'))
         {
             if (file_exists(storage_path("app/public/{$logo->image}")))

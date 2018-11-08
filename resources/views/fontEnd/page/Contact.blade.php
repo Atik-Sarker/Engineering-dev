@@ -11,20 +11,28 @@
                 </div>
             </div>
             <div class="col-lg-12">
-                <form action="" method="get" accept-charset="utf-8" id="form" class="cmn_form">
+            <form action="{{ route('contactInfo') }}" method="post" accept-charset="utf-8" id="form" class="cmn_form">
+                @csrf
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 wow fadeInLeft" data-wow-duration="2s" data-wow-delay="0s">
+                            <div class="form-group">
                             <label>YOUR NAME</label>
                             <input type="text" name="name" placeholder="YOUR NAME">
+                            @if ($errors->has('name'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('name') }}</strong>
+                            </span>
+                            @endif
+                            </div>
                             <label>YOUR E-MAIL</label>
-                            <input type="email" name="phone" placeholder="YOUR EMAIL">
+                            <input type="email" name="email" placeholder="YOUR EMAIL">
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 wow fadeInRight" data-wow-duration="2s" data-wow-delay="0s">
 
                             <label>YOUR MOBILE</label>
-                            <input type="text" name="name" placeholder="YOUR MOBILE">
+                            <input type="text" name="phone" placeholder="YOUR MOBILE">
                             <label>FOR INQUIRY</label>
-                            <input type="text" name="email" placeholder="FOR INQUIRY">
+                            <input type="text" name="inquiry" placeholder="FOR INQUIRY">
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 wow zoomIn" data-wow-duration="1s" data-wow-delay="0s">
                             <textarea name="message" placeholder="MESSAGE"></textarea>

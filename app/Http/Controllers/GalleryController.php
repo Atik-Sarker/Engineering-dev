@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class GalleryController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -58,18 +68,22 @@ class GalleryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Gallery  $gallery
+     * @param  \App\
      * @return \Illuminate\Http\Response
      */
-    public function show(Gallery $gallery)
+    public function status(Request $request)
     {
-        //
+        $gallery = Gallery::findOrFail($request->id);
+
+        $gallery->status = $request->status;
+        $gallery->save();
+        return redirect(route('gallery.manage'))->with('status', 'Status Update Successfully!');
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Gallery  $gallery
+     * @param  \App\
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -83,7 +97,7 @@ class GalleryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Gallery  $gallery
+     * @param  \App\
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -107,7 +121,6 @@ class GalleryController extends Controller
          $gallery->save();
         return redirect()->back()->with('status', 'Gallery Update successfully!');      
         }
-        // without image
          $gallery->title = $request->title;
          $gallery->status = $request->status;
          $gallery->save();

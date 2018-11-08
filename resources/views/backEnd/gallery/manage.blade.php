@@ -51,7 +51,23 @@
                                         <td>{{ $loop->index +1}}</td>
                                         <td>{{ $gallery->title }}</td>
                                         <td class="manage-image"> <img src="{{asset('storage')}}/{{$gallery->image}}" alt="" height="200px" ; width="200px"></td>
-                                        <td>{{ $gallery->status? 'Active' : 'Unpublished' }}</td>
+                                        <td>
+                                            {{ $gallery->status? 'Publish' : 'Unpublished' }}
+                                            
+                                            @if($gallery->status==1)
+                                            <form action="{{route('gallery.status', $gallery->id)}}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="status" value="0">
+                                            <button type="submit" class="thumbs_up" title="unpublished"><i class="fa fa-thumbs-down"></i></button>
+                                            </form>
+                                            @else
+                                            <form action="{{route('gallery.status', $gallery->id)}}" method="POST">
+                                                @csrf
+                                                <input type="hidden" name="status" value="1">
+                                                <button type="submit" class="thumbs_down" title="published"><i class="fa fa-thumbs-up"></i></button>
+                                            </form>
+                                            @endif
+                                        </td>
 
                                         <td>
                                             <a href="{{ route('gallery.edit', $gallery->id) }}"><span class="glyphicon glyphicon-edit"></span></a> 

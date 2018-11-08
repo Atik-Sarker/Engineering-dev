@@ -7,7 +7,7 @@
         @foreach($sliders as $slider)
             <div class="slider-item">
                 <div class="slider-image">
-            <img src="{{ asset('storage') }}/{{ $slider->image }}">
+                    <img src="{{ asset('storage') }}/{{ $slider->image }}">
                 </div>
                 <div class="slider-text hidden-xs">
                     <h2 class="allcaps animated bounceInLeft">{{$slider->slider_title}}</h2>
@@ -19,28 +19,23 @@
                 </div>
                 <div class="slider-overlay"></div>
             </div>
-            @endforeach
+        @endforeach
             <!--slider-item end-->
         </div>
         <!-- End Carousel -->
-    </section>
-    <!--Slider end-->
-
+</section> <!--Slider end-->
+   
     <section class="about-section section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div id="about" class="about-box1">
                         <h2> Wecome to Riant Engineering Ltd</h2>
-
-                        <p>
-                            OVERVIEW
-                            Riant Engineers Ltd (REL) is an engineering based EPC (Engineering Procurement and construction) firm, previously known as Riant Engineers which was formed in early 2006 by some of expert professional engineers to provide complete engineering solution to the infrastructure and power sector in our country. Since its inception, we have successfully completed many iconic projects in Civil and Construction, Power and Energy, Mechanical, Automation & Real Estate Sector and has made good name in this arena by ensuring highest Our Servicestandard in every process of our work and completing projects in due time. Soon, our company came to light and earned reliability to the industrial entrepreneur like-Private (Multinational and Local) and government organization for our technical knowhow and ready solution to the critical problems. Our objective is to produce quality Engineering services through positive closely controlled, well-managed & professional manner.
+                        <p> OVERVIEW Riant Engineers Ltd (REL) is an engineering based EPC (Engineering Procurement and construction) firm, previously known as Riant Engineers which was formed in early 2006 by some of expert professional engineers to provide complete engineering solution to the infrastructure and power sector in our country. Since its inception, we have successfully completed many iconic projects in Civil and Construction, Power and Energy, Mechanical, Automation & Real Estate Sector and has made good name in this arena by ensuring highest Our Servicestandard in every process of our work and completing projects in due time. Soon, our company came to light and earned reliability to the industrial entrepreneur like-Private (Multinational and Local) and government organization for our technical knowhow and ready solution to the critical problems. Our objective is to produce quality Engineering services through positive closely controlled, well-managed & professional manner.
                         </p>
-                        <a href="#" class="about-company-btn">Read More</a>
+                    <a href="{{ route('overview') }}" class="about-company-btn">Read More</a>
                     </div>
                 </div>
-
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="about-box1">
                         <div class="about-box-img">
@@ -48,7 +43,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -210,6 +204,7 @@
                     </div><!-- client end -->
 
                 </div>
+
                 <div class="col-lg-6 col-md-6 col-sm-6">
 
                     <div class="partner">
@@ -220,20 +215,17 @@
                         <div class="partner-slider owl-carousel">
                             @foreach ($ourPartners as $ourPartner)
                             <div class="client-slider-item">
-                            <img src="{{ asset('storage') }}/{{ $ourPartner->image }}" alt="">
-                            </div><!-- client-slider-item end -->
+                                <img src="{{ asset('storage') }}/{{ $ourPartner->image }}" alt="">
+                            </div>
                             @endforeach
-
                         </div><!-- client-slider end -->
                     </div>
 
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-----------------------clients-section end---------------------->
-
-
+                </div><!-- slider item end -->
+            </div><!-- Rowr end -->
+        </div><!-- Container end -->
+    </section> <!-----------------------clients-section end---------------------->
+   
     <section id="gallery" class="section-padding">
         <div class="container">
             <div class="row">

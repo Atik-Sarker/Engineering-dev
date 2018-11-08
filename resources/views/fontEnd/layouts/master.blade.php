@@ -155,23 +155,23 @@
                             <h3 class="footer-title pb20">COMPANY LINKS</h3>
                             <ul>
                                 <li><a href="#home">Home</a></li>
-                                <li><a href="#">Contact</a></li>
-                                <li><a href="#about">About</a></li>
-                                <li><a href="#gallery">Gallery</a></li>
-                                <li><a href="#">Civil & Construction</a></li>
-                                <li><a href="#">Real Estate</a></li>
+                                <li><a href="{{route('Contact')}}">Contact</a></li>
+                                <li><a href="{{route('overview')}}">About</a></li>
+                                <li><a href="{{route('Gallery')}}">Gallery</a></li>
+                                <li><a href="{{ route('civilConstruction') }}">Civil & Construction</a></li>
+                                <li><a href="{{route('realEstate')}}">Real Estate</a></li>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-6">
                         <div class="quick-links">
                             <h3 class="footer-title pb20">COMPANY LINKS</h3>
                             <ul>
-                                <li><a href="">Health & Safty</a></li>
-                                <li><a href="">Total Quality Management</a></li>
-                                <li><a href="">Environment</a></li>
-                                <li><a href="">Vision & Mission</a></li>
-                                <li><a href="">Management</a></li>
-                                <li><a href="">Key Person</a></li>
+                                <li><a href="{{route('HealthSafty')}}">Health & Safty</a></li>
+                                <li><a href="{{route('QualityManagement')}}">Total Quality Management</a></li>
+                                <li><a href="{{route('Environment')}}">Environment</a></li>
+                                <li><a href="{{route('VisionMission')}}">Vision & Mission</a></li>
+                                <li><a href="{{route('Management')}}">Management</a></li>
+                                <li><a href="{{route('keyPerson')}}">Key Person</a></li>
                             </ul>
                         </div>
                     </div>

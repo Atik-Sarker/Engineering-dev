@@ -55,7 +55,23 @@
                                         <td>{{ $slider->slider_title }}</td>
                                         <td>{{ $slider->slider_subtitle }}</td>
                                         <td class="manage-image"> <img src="{{asset('storage')}}/{{$slider->image}}" alt="" height="200px" ; width="200px"></td>
-                                        <td>{{ $slider->status? 'Active' : 'Unpublished' }}</td>
+                                        <td>{{ $slider->status? 'Active' : 'Unpublished' }}
+
+                                            @if($slider->status==1)
+                                            <form action="{{route('slider.status', $slider->id)}}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="status" value="0">
+                                            <button type="submit" class="thumbs_up" title="unpublished"><i class="fa fa-thumbs-down"></i></button>
+                                            </form>
+                                            @else
+                                            <form action="{{route('slider.status', $slider->id)}}" method="POST">
+                                                @csrf
+                                                <input type="hidden" name="status" value="1">
+                                                <button type="submit" class="thumbs_down" title="published"><i class="fa fa-thumbs-up"></i></button>
+                                            </form>
+                                            @endif
+
+                                        </td>
 
                                         <td>
                                             <a href="{{ route('slider.edit', $slider->id) }}"><span class="glyphicon glyphicon-edit"></span></a> 

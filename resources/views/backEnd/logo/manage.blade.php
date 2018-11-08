@@ -59,7 +59,23 @@
                                             @endif
                                         </td>
                                         <td class="manage-image"> <img src="{{asset('storage')}}/{{$logo->image}}" alt="" height="200px" ; width="200px"></td>
-                                        <td>{{ $logo->status? 'Publish' : 'Unpublished' }}</td>
+                                        <td>{{ $logo->status? 'Publish' : 'Unpublished' }}
+                                        
+                                                @if($logo->status==1)
+                                                <form action="{{route('logo.status', $logo->id)}}" method="POST">
+                                                @csrf
+                                                <input type="hidden" name="status" value="0">
+                                                <button type="submit" class="thumbs_up" title="unpublished"><i class="fa fa-thumbs-down"></i></button>
+                                                </form>
+                                                @else
+                                                <form action="{{route('logo.status', $logo->id)}}" method="POST">
+                                                    @csrf
+                                                    <input type="hidden" name="status" value="1">
+                                                    <button type="submit" class="thumbs_down" title="published"><i class="fa fa-thumbs-up"></i></button>
+                                                </form>
+                                                @endif
+                                        
+                                        </td>
 
                                         <td>
                                             <a href="{{ route('logo.edit', $logo->id) }}"><span class="glyphicon glyphicon-edit"></span></a> 

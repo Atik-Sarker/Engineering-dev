@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('sendemail','ContactInfoController@email');
 
 Route::get('/', 'BaseController@index');
 
@@ -29,6 +29,7 @@ Route::get('/overview', 'BaseController@overview')->name('overview');
 Route::get('/vision-&-Mission', 'BaseController@VisionMission')->name('VisionMission');
 Route::get('/management', 'BaseController@Management')->name('Management');
 Route::get('/key-person', 'BaseController@keyPerson')->name('keyPerson');
+Route::post('/contact-info', 'ContactInfoController@index')->name('contactInfo');
 // MENU ROUTE END
 
 // slider Route start
@@ -38,6 +39,7 @@ Route::get('/slider/manage', 'sliderController@index')->name('slider.manage');
 Route::get('/slider/edit/{id}', 'sliderController@edit')->name('slider.edit');
 Route::post('/slider/update/{id}', 'sliderController@update')->name('slider.update');
 Route::get('/slider/delete/{id}', 'sliderController@destroy')->name('slider.destroy');
+Route::post('/slider/status/{id}', 'sliderController@status')->name('slider.status');
 
 // slider Route ends
 
@@ -48,6 +50,7 @@ Route::get('/logo/manage', 'LogoController@index')->name('logo.manage');
 Route::get('/logo/edit/{id}', 'LogoController@edit')->name('logo.edit');
 Route::post('/logo/update/{id}', 'LogoController@update')->name('logo.update');
 Route::get('/logo/delete/{id}', 'LogoController@destroy')->name('logo.destroy');
+Route::post('/logo/status/{id}', 'LogoController@status')->name('logo.status');
 
 // Logo Route ends
 
@@ -58,6 +61,7 @@ Route::post('/gallery/create', 'GalleryController@store')->name('gallery.store')
 Route::get('/gallery/edit/{id}', 'GalleryController@edit')->name('gallery.edit');
 Route::post('/gallery/update/{id}', 'GalleryController@update')->name('gallery.update');
 Route::get('/gallery/delete/{id}', 'GalleryController@destroy')->name('gallery.destroy');
+Route::post('/gallery/status/{id}', 'GalleryController@status')->name('gallery.status');
 // Gallery Route ends
 
 

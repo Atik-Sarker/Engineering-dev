@@ -9,7 +9,7 @@ use App\Gallery;
 
 class BaseController extends Controller
 {
-    
+
     /**
      * Display a listing of the resource.
      *

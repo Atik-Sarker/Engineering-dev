@@ -63,35 +63,37 @@
                                     </span>
                                     @endif
                                 </div>
-                                <div class="col-lg-4">
-                                    <div class="checkbox{{ $errors->has('status') ? ' is-invalid' : '' }}">
-                                        <label class="custom-checkbox">
-                                            <input type="radio" name="status" value="1" value="{{ old('status') }}"> 
-                                            <span class="checkmark"></span>
-                                            Publish
-                                        </label>
-                                    </div>
-                                    @if ($errors->has('status'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('status') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
 
                                 <div class="col-lg-4">
-                                    <div class="checkbox{{ $errors->has('status') ? ' is-invalid' : '' }}">
-                                        <label class="custom-checkbox">
-                                            <input type="radio" name="status" value="0" value="{{ old('status') }}> 
-                                            <span class="checkmark"></span>
-                                            Unpublished
-                                        </label>
+                                        <div class="checkbox{{ $errors->has('status') ? ' is-invalid' : '' }}">
+                                            <label class="custom-checkbox">
+                                                <input type="radio" name="status" value="1" value="{{ old('status') }}"> 
+                                                <span class="checkmark"></span>
+                                                Publish
+                                            </label>
+                                        </div>
+                                        @if ($errors->has('status'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('status') }}</strong>
+                                        </span>
+                                        @endif
                                     </div>
-                                    @if ($errors->has('status'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('status') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
+    
+                                    <div class="col-lg-4">
+                                        <div class="checkbox{{ $errors->has('status') ? ' is-invalid' : '' }}">
+                                            <label class="custom-checkbox">
+                                                <input type="radio" name="status" value="0" value="{{ old('status') }}"> 
+                                                <span class="checkmark"></span>
+                                                Unpublished
+                                            </label>
+                                        </div>
+                                        @if ($errors->has('status'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('status') }}</strong>
+                                        </span>
+                                        @endif
+                                    </div>
+                                
                             </div>
                             <!-- /.box-body -->
                             <div class="box-footer">

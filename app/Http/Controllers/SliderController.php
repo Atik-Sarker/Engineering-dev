@@ -78,9 +78,12 @@ class SliderController extends Controller
      * @param  \App\slider  $slider
      * @return \Illuminate\Http\Response
      */
-    public function show(slider $slider)
+    public function status(Request $request, $id)
     {
-        //
+        $slider = slider::findOrFail($id);
+        $slider->status = $request->status;
+        $slider->save();
+        return redirect(route('slider.manage'))->with('status', 'Status Update Successfully!');
     }
 
     /**
@@ -110,7 +113,6 @@ class SliderController extends Controller
             'slider_subtitle' => 'required|string|max:150',
             'status' => 'required|Boolean',
         ]);
-        return $request->all();
         
         $slider = slider::findOrFail($id);
         
