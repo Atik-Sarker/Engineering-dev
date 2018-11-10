@@ -67,8 +67,8 @@ class SliderController extends Controller
         $slider->status = $request->status;
         $slider->image = $path;
         $slider->save();
-        Toastr::success('message', 'slider add successfully!');
-        return redirect(route('slider.manage'))->with('status', 'slider add successfully!');
+        Toastr::success('Create Successfully!', 'Notification');
+        return redirect(route('slider.manage'));
         
     }
 
@@ -83,7 +83,8 @@ class SliderController extends Controller
         $slider = slider::findOrFail($id);
         $slider->status = $request->status;
         $slider->save();
-        return redirect(route('slider.manage'))->with('status', 'Status Update Successfully!');
+        Toastr::success('Update Successfully!', 'Notification');
+        return redirect(route('slider.manage'));
     }
 
     /**
@@ -129,14 +130,16 @@ class SliderController extends Controller
             $slider->status = $request->status;
             $slider->image = $path;
             $slider->save();
-            return redirect(route('slider.manage'))->with('status', 'slider update successfully!');
+            Toastr::success('Update Successfully!', 'Notification');
+            return redirect(route('slider.manage'));
         }
         $slider->slider_name = $request->slider_name;
         $slider->slider_title = $request->slider_title;
         $slider->slider_subtitle = $request->slider_subtitle;
         $slider->status = $request->status;
         $slider->save();
-        return redirect(route('slider.manage'))->with('status', 'slider update successfully!');
+        Toastr::success('Update Successfully!', 'Notification');
+        return redirect(route('slider.manage'));
         
     }
 
@@ -155,7 +158,7 @@ class SliderController extends Controller
            unlink(storage_path("app/public/{$slider->image}"));
             slider::findOrFail($id)->delete();
         }
-        Toastr::success('message', 'slider Delete successfully!');
-        return redirect(route('slider.manage'))->with('status', 'Delete Successfully');
+        Toastr::success('Delete Successfully!', 'Notification');
+        return redirect(route('slider.manage'));
     }
 }

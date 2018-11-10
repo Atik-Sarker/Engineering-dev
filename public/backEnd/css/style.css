@@ -106,3 +106,8 @@
     color: #b8c7ce !important;
     text-align: center;
 }
+
+.service-image img{
+    height: 100%;
+    width: 100%;
+}

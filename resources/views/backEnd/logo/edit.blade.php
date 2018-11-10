@@ -71,7 +71,7 @@
                                     @endif
                                 </div>
 
-                                <div class="col-lg-4">
+                                    <div class="col-lg-4">
                                         <div class="checkbox{{ $errors->has('status') ? ' is-invalid' : '' }}">
                                             <label class="custom-checkbox">
                                                 <input type="radio" name="status" value="1" > 

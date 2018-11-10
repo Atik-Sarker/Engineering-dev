@@ -10,9 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('sendemail','ContactInfoController@email');
 
 Route::get('/', 'BaseController@index');
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
 
 //MENU ROUTE START
 Route::get('/power-&-energy', 'BaseController@PowerEnergy')->name('powerEnergy');
@@ -64,8 +66,17 @@ Route::get('/gallery/delete/{id}', 'GalleryController@destroy')->name('gallery.d
 Route::post('/gallery/status/{id}', 'GalleryController@status')->name('gallery.status');
 // Gallery Route ends
 
+// Service Route start
+Route::get('/service/manage', 'serviceController@index')->name('service.manage');
+Route::get('/service/create', 'serviceController@create')->name('service.create');
+Route::post('/service/create', 'serviceController@store')->name('service.store');
+Route::get('/service/edit/{id}', 'serviceController@edit')->name('service.edit');
+Route::post('/service/update/{id}', 'serviceController@update')->name('service.update');
+Route::get('/service/delete/{id}', 'serviceController@destroy')->name('service.destroy');
+Route::post('/service/status/{id}', 'serviceController@status')->name('service.status');
+// Service Route ends
 
 
 
-Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+
+

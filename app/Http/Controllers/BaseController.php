@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\slider;
 use App\Logo;
 use App\Gallery;
+use App\Service;
+use Brian2694\Toastr\Facades\Toastr;
 
 class BaseController extends Controller
 {
@@ -36,8 +38,9 @@ class BaseController extends Controller
          ])->orderBy('created_at','desc')->get();
 
          $gallerys = Gallery::where('status', true)->orderBy('created_at','desc')->limit('8',0)->get();
+         $services = Service::where('status', true)->orderBy('created_at','desc')->get();
 
-        return view('fontEnd.index', compact('sliders','ourClients','ourPartners', 'logo', 'gallerys'));
+        return view('fontEnd.index', compact('sliders','ourClients','ourPartners', 'logo', 'gallerys','services'));
     }
 
     

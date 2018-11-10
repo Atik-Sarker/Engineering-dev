@@ -1610,5 +1610,8 @@ item-img {
     transform: translateY(-50px);
 }
 
+.invalid-feedback {
+    color: red;
+}
 
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Logo;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
 
 class LogoController extends Controller
 {
@@ -63,7 +64,8 @@ class LogoController extends Controller
         $logo->status = $request->status;
         $logo->image = $path;
         $logo->save();
-        return redirect(route('logo.manage'))->with('status', 'logo add successfully!');
+        Toastr::success('Create Successfully!', 'Notification');
+        return redirect(route('logo.manage'));
     }
 
     /**
@@ -77,7 +79,8 @@ class LogoController extends Controller
         $logo = Logo::findOrFail($id);
         $logo->status = $request->status;
         $logo->save();
-        return redirect(route('logo.manage'))->with('status', 'Status Update Successfully!');
+        Toastr::success('Update Successfully!', 'Notification');
+        return redirect(route('logo.manage'));
 
     }
 
@@ -122,13 +125,15 @@ class LogoController extends Controller
             $logo->status = $request->status;
             $logo->image = $path;
             $logo->save();
-            return redirect(route('logo.manage'))->with('status', 'logo Update successfully!'); 
+            Toastr::success('Update Successfully!', 'Notification');
+            return redirect(route('logo.manage')); 
         }
         // without image 
         $logo->type = $request->type;
         $logo->status = $request->status;
         $logo->save();
-        return redirect(route('logo.manage'))->with('status', 'logo Update successfully!'); 
+        Toastr::success('Update Successfully!', 'Notification');
+        return redirect(route('logo.manage')); 
         
         
         
@@ -149,6 +154,7 @@ class LogoController extends Controller
             unlink(storage_path("app/public/{$logo->image}"));
         }
         Logo::findOrFail($id)->delete();
-        return redirect(route('logo.manage'))->with('status', 'logo delete successfully!'); 
+        Toastr::success('Delete Successfully!', 'Notification');
+        return redirect(route('logo.manage')); 
     }
 }

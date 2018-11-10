@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Gallery;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
 
 class GalleryController extends Controller
 {
@@ -60,7 +61,8 @@ class GalleryController extends Controller
          $gallery->status = $request->status;
          $gallery->image = $path;
          $gallery->save();
-        return redirect(route('gallery.manage'))->with('status', 'Gallery add successfully!');      
+         Toastr::success('Create Successfully!', 'Notification');
+        return redirect(route('gallery.manage'));      
         }
 
     }
@@ -77,7 +79,8 @@ class GalleryController extends Controller
 
         $gallery->status = $request->status;
         $gallery->save();
-        return redirect(route('gallery.manage'))->with('status', 'Status Update Successfully!');
+        Toastr::success('Update Successfully!', 'Notification');
+        return redirect(route('gallery.manage'));
     }
 
     /**
@@ -119,12 +122,14 @@ class GalleryController extends Controller
          $gallery->status = $request->status;
          $gallery->image = $path;
          $gallery->save();
-        return redirect()->back()->with('status', 'Gallery Update successfully!');      
+         Toastr::success('Update Successfully!', 'Notification');
+        return redirect(route('gallery.manage'));      
         }
          $gallery->title = $request->title;
          $gallery->status = $request->status;
          $gallery->save();
-        return redirect(route('gallery.manage'))->with('status', 'Gallery Update successfully!'); 
+         Toastr::success('Update Successfully!', 'Notification');
+        return redirect(route('gallery.manage')); 
     }
 
     /**
@@ -142,6 +147,7 @@ class GalleryController extends Controller
            unlink(storage_path("app/public/{$gallery->image}"));
             gallery::findOrFail($id)->delete();
         }
-        return redirect(route('gallery.manage'))->with('status', 'Delete Successfully');
+        Toastr::success('Delete Successfully!', 'Notification');
+        return redirect(route('gallery.manage'));
     }
 }

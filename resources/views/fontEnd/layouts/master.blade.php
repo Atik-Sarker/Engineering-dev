@@ -18,9 +18,10 @@
     <link rel="stylesheet" href="{{ asset('fontEnd/css/light-gallery.css') }}">
     <!--    main menu Css-->
     <link rel="stylesheet" href="{{ asset('fontEnd/css/meanmenu.min.css') }}">
-
+    
     <link type="text/css" href="{{ asset('fontEnd/css/style.css') }}" rel="stylesheet">
     <link type="text/css" href="{{ asset('fontEnd/css/responsive.css')}}" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -242,7 +243,7 @@
         });
 
     </script>
-
+    
 
 </body>
 

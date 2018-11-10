@@ -19,7 +19,7 @@
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="{{ asset('backEnd/dist/css/skins/_all-skins.min.css') }}">
 
-  <link rel="stylesheet" href="{{ asset('backEnd/css/toastr.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('toastr/toastr.min.css') }}">
   <link rel="stylesheet" href="{{ asset('backEnd/css/style.css') }}">
 
   <!-- Google Font -->
@@ -31,7 +31,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="../../index2.html" class="logo">
+    <a href="{{route('home')}}" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>RIANT</b></span>
       <!-- logo for regular state and mobile devices -->
@@ -114,11 +114,24 @@
             <li><a href="{{ route('gallery.manage')}}"><i class="fa fa-circle-o"></i> Manage Gallery</a></li>
           </ul>
         </li>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-slideshare" aria-hidden="true"></i> <span>Service</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('service.create')}}"><i class="fa fa-circle-o"></i> Add Service</a></li>
+            <li><a href="{{ route('service.manage')}}"><i class="fa fa-circle-o"></i> Manage Service</a></li>
+          </ul>
+        </li>
 
-        <li class="header">LABELS</li>
+        {{-- <li class="header">LABELS</li>
         <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
         <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li> --}}
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -172,7 +185,7 @@
 <script src="{{ asset('backEnd/dist/js/adminlte.min.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('backEnd/js/jquery.min.js') }}"></script>
-<script src="{{ asset('backEnd/js/toastr.min.js') }}"></script>
+<script src="{{ asset('toastr/toastr.min.js') }}"></script>
 <script src="{{ asset('backEnd/dist/js/demo.js') }}"></script>
 
 <script>
@@ -180,10 +193,11 @@
     $('.sidebar-menu').tree()
   });
     
-    {!! Toastr::message() !!}
+    
 </script>
 
 @section('footer_script')
     @show
+    {!! Toastr::message() !!}
 </body>
 </html>

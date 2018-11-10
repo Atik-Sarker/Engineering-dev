@@ -128,54 +128,17 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="service-inner owl-carousel">
+                        @foreach($services as $service)
                         <div class="service-item">
                             <div class="service-images">
-                                <img src="{{ asset('fontEnd/images/1.png') }}" alt="">
+                            <img src="{{ asset('storage') }}/{{$service->image}}" alt="">
                             </div>
                             <div class="service-info">
-                                <h3>Service One</h3>
-                                <p>There are many variations of passages of Lorem Ipsum text available, but the fact is lorem ipsum dummy text are many is dummy text ever i have seen!</p>
-
-
+                                <h3>{{$service->title}}</h3>
+                            <p>{{ $service->description }}</p>
                             </div><!-- service-info end -->
                         </div>
-                        <!-- service-item end -->
-                        <div class="service-item">
-                            <div class="service-images">
-                                <img src="{{ asset('fontEnd/images/4.jpg') }}" alt="">
-                            </div>
-                            <div class="service-info">
-                                <h3>Service Two</h3>
-                                <p>There are many variations of passages of Lorem Ipsum text available, but the fact is lorem ipsum dummy text are many is dummy text ever i have seen!</p>
-
-
-                            </div><!-- service-info end -->
-                        </div>
-                        <!-- service-item end -->
-                        <div class="service-item">
-                            <div class="service-images">
-                                <img src="{{ asset('fontEnd/images/13.jpg') }}" alt="">
-                            </div>
-                            <div class="service-info">
-                                <h3>Service three</h3>
-                                <p>There are many variations of passages of Lorem Ipsum text available, but the fact is lorem ipsum dummy text are many is dummy text ever i have seen!</p>
-
-
-                            </div><!-- service-info end -->
-                        </div>
-                        <!-- service-item end -->
-                        <div class="service-item">
-                            <div class="service-images">
-                                <img src="{{ asset('fontEnd/images/6.jpg') }}" alt="">
-                            </div>
-                            <div class="service-info">
-                                <h3>Service 4</h3>
-                                <p>There are many variations of passages of Lorem Ipsum text available, but the fact is lorem ipsum dummy text are many is dummy text ever i have seen!</p>
-
-
-                            </div><!-- service-info end -->
-                        </div>
-                        <!-- service-item end -->
+                       @endforeach
                     </div>
                 </div>
             </div><!-- row end -->
@@ -240,7 +203,7 @@
                 <div id="lightgallery" class="gallary-img  work-inner">
 
                    @foreach ($gallerys as $gallery)
-                    <div class="col-lg-3 col-md-3 col-sm-6" data-src="{{asset('storage')}}/{{$gallery->image}}" data-sub-html="<h4>Your Title</h4>">
+                    <div class="col-lg-3 col-md-3 col-sm-6" data-src="{{asset('storage')}}/{{$gallery->image}}" data-sub-html="<h4>{{$gallery->title}}</h4>">
                         <div class="item-img">
                             <img src="{{asset('storage')}}/{{$gallery->image}}" alt="">
                             <div class="item-img-overlay">
